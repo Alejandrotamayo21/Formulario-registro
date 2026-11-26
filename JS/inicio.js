@@ -1,3 +1,25 @@
+const bienvenida = document.getElementById('bienvenida');
+const cerrarSesion = document.getElementById('cerrarSesion');
+
+const usuario = JSON.parse(
+    localStorage.getItem('usuarioActivo')
+);
+
+if(!usuario){
+    window.location.href = 'login.html';
+} else{
+    bienvenida.textContent = usuario.nombre;
+}
+
+cerrarSesion.addEventListener('click', function(){
+    localStorage.removeItem('usuarioActivo');
+    window.location.href = 'index.html';
+});
+
+
+
+// Formulario personalizado
+
 let formulario = document.querySelector(".formulario");
 let mensaje = document.querySelector(".mensaje");
 let cuerpoTabla = document.querySelector(".cuerpoTabla");
