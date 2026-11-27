@@ -1,4 +1,4 @@
-const bienvenida = document.getElementById('bienvenida');
+const bienvenida = document.getElementById('bienvenido');
 const cerrarSesion = document.getElementById('cerrarSesion');
 
 const usuario = JSON.parse(
@@ -6,7 +6,7 @@ const usuario = JSON.parse(
 );
 
 if(!usuario){
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 } else{
     bienvenida.textContent = usuario.nombre;
 }

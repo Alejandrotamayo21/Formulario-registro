@@ -8,27 +8,27 @@ function validarNombre(){
         document.querySelector('#errorNombre').textContent = 'El nombre debe tener mínimo 3 caracteres';
         return false;
     }
-    document.getElementById('errorNombre').textContet = '';
+    document.querySelector('#errorNombre').textContent = '';
     return true;
 }
 
 function validarCorreo(){
-    if(true){
-        document.getElementById('errorCorreo').textContent = 'Correo no válido';
+    const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value.trim());
+    if(!correoValido){
+        document.querySelector('#errorCorreo').textContent = 'Correo no válido';
         return false;
-    } // Luego lo organizo
-    
-    document.getElementById('errorCorreo').textContent = '';
-    return false;
+    }
+    document.querySelector('#errorCorreo').textContent = '';
+    return true;
 }
 
 function validarPassword(){
-    if(true){
-        document.getElementById('errorPassword').textContent = 'Min 8 caracteres, mayúsculas, minúsculas, número y especial';
+    const passwordValida = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(password.value);
+    if(!passwordValida){
+        document.querySelector('#errorPassword').textContent = 'Min 8 caracteres, mayúsculas, minúsculas, número y especial';
         return false;
-    } // luego lo organizo
-    
-    document.getElementById(errorPassword).textContent = '';
+    }
+    document.querySelector('#errorPassword').textContent = '';
     return true;
 }
 
@@ -42,27 +42,24 @@ form.addEventListener('submit', function(event){
     if(!validarNombre() || !validarCorreo() || !validarPassword()){
         return;
     }
-})
 
-let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-if(usuarios.find(usuario => usuario.correo.toLowerCase() === correo.value.trim().toLowerCase())){
-    alert('Este correo ya está registrado');
-    return;
-}
+    if(usuarios.find(usuario => usuario.correo.toLowerCase() === correo.value.trim().toLowerCase())){
+        alert('Este correo ya está registrado');
+        return;
+    }
 
-const nuevoUsuario = {
-    nombre: nombre.value.trim(),
-    correo: correo.value.trim(),
-    password: password.value.trim()
-};
+    const nuevoUsuario = {
+        nombre: nombre.value.trim(),
+        correo: correo.value.trim(),
+        password: password.value.trim()
+    };
 
-usuarrios.push(nuevoUsuario);
-localStorage.setItem('usuarios', JSON.stringify('usuarios'));
+    usuarios.push(nuevoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-alert('registro exitoso');
-
-form.requestFullscreen();
-
-window.location.href = 'login.html';
+    alert('Registro exitoso');
+    window.location.href = 'index.html';
+});
 

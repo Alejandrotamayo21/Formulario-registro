@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
   <div class="contenedor">
@@ -18,10 +19,56 @@
   <!-- crear un formulario con al menos 15 campos sobre cualquier tema.
    utilizar querySelector y formData para validar que no haya campos vacios 
    guardar la informacion en localStorage y mostrar los datos registrados-->    
+    <form class="formulario">
+      <label>Nombre: <input type="text" name="nombre"></label><br><br>
+      <label>Apellido: <input type="text" name="apellido"></label><br><br>
+      <label>Tipo de documento: <input type="text" name="tipoDocumento"></label><br><br>
+      <label>Numero de documento: <input type="number" name="documento"></label><br><br>
+      <label>Fecha de nacimiento: <input type="date" name="fechaNacimiento"></label><br><br>
+      <label>Edad: <input type="number" name="edad"></label><br><br>
+      <label>Correo: <input type="email" name="correo"></label><br><br>
+      <label>Telefono: <input type="tel" name="telefono"></label><br><br>
+      <label>Direccion: <input type="text" name="direccion"></label><br><br>
+      <label>Ciudad: <input type="text" name="ciudad"></label><br><br>
+      <label>Programa: <input type="text" name="programa"></label><br><br>
+      <label>Ficha: <input type="number" name="ficha"></label><br><br>
+      <label>Jornada: <input type="text" name="jornada"></label><br><br>
+      <label>Fecha de ingreso: <input type="date" name="fechaIngreso"></label><br><br>
+      <label>Valor de la matricula: <input type="number" name="matricula"></label><br><br>
 
+      <button type="submit">Registrar</button>
+    </form>
 
+    <p class="mensaje"></p>
+
+    <h2>Datos registrados</h2>
+    <div style="overflow-x: auto;">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Tipo de documento</th>
+            <th>Documento</th>
+            <th>Fecha de nacimiento</th>
+            <th>Edad</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Ciudad</th>
+            <th>Programa</th>
+            <th>Ficha</th>
+            <th>Jornada</th>
+            <th>Fecha de ingreso</th>
+            <th>Matricula</th>
+            <th>Fecha de registro</th>
+          </tr>
+        </thead>
+        <tbody class="cuerpoTabla"></tbody>
+      </table>
+    </div>
   </div>
 
-  <script src="js/inicio.js"></script>
+  <script src="JS/inicio.js"></script>
 </body>
 </html>
