@@ -4,28 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro</title>
-  <link rel="stylesheet" href="CSS/styles.css">
 </head>
+<link rel="stylesheet" href="CSS/styles.css">
 <body>
-  <div class="contenedor">
-    <h1>Crear cuenta</h1>
-    <form id="formRegistro">
-      <input type="text" id="nombre" placeholder="Nombre completo">
-      <small id="errorNombre"></small>
+  <div>
+    <h2>Registro de estudiantes</h2>
 
-      <input type="email" id="correo" placeholder="Correo electronico">
-      <small id="errorCorreo"></small>
+    <form class="formulario">
+      <label>Nombre: <input type="text" name="nombre"></label><br><br>
+      <label>Apellido: <input type="text" name="apellido"></label><br><br>
+      <label>Tipo de documento: <input type="text" name="tipoDocumento"></label><br><br>
+      <label>Numero de documento: <input type="number" name="documento"></label><br><br>
+      <label>Fecha de nacimiento: <input type="date" name="fechaNacimiento"></label><br><br>
+      <label>Edad: <input type="number" name="edad"></label><br><br>
+      <label>Correo: <input type="email" name="correo"></label><br><br>
+      <label>Telefono: <input type="tel" name="telefono"></label><br><br>
+      <label>Direccion: <input type="text" name="direccion"></label><br><br>
+      <label>Ciudad: <input type="text" name="ciudad"></label><br><br>
+      <label>Programa: <input type="text" name="programa"></label><br><br>
+      <label>Ficha: <input type="number" name="ficha"></label><br><br>
+      <label>Jornada: <input type="text" name="jornada"></label><br><br>
+      <label>Fecha de ingreso: <input type="date" name="fechaIngreso"></label><br><br>
+      <label>Valor de la matricula: <input type="number" name="matricula"></label><br><br>
 
-      <input type="password" id="password" placeholder="Contraseña">
-      <small id="errorPassword"></small>
-
-      <button type="submit">Registrarse</button>
+      <button type="submit">Registrar</button>
     </form>
-    <p>¿Ya tienes cuenta?
-      <a href="index.html">Iniciar sesion</a>
-    </p>
+
+    <p class="mensaje"></p>
+
+    <h2>Datos registrados</h2>
+    <div style="overflow-x: auto;">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Tipo de documento</th>
+            <th>Documento</th>
+            <th>Fecha de nacimiento</th>
+            <th>Edad</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Ciudad</th>
+            <th>Programa</th>
+            <th>Ficha</th>
+            <th>Jornada</th>
+            <th>Fecha de ingreso</th>
+            <th>Matricula</th>
+            <th>Fecha de registro</th>
+          </tr>
+        </thead>
+        <tbody class="cuerpoTabla"></tbody>
+      </table>
+    </div>
   </div>
 
-  <script src="JS/registro.js"></script>
+  <script src="js/registro.js"></script>
 </body>
 </html>
